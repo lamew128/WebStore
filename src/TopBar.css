@@ -1,0 +1,67 @@
+.topBar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topBar_logo {
+  width: 100px;
+  object-fit: contain;
+  margin: 0 20px;
+  margin-top: 18px;
+}
+
+.topBar_search {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 24px;
+}
+
+.topBar_input {
+  height: 12px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+
+.topBar_searchIcon {
+  padding: 5px;
+  height: 22px !important;
+  background-color: #CD9042;
+}
+
+.topBar_nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.topBar_option {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px 0 10px;
+  color: white;
+}
+
+.topBar_optionOne {
+  font-size: 10px;
+}
+
+.topBar_optionTwo {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.topBar_optionBasket {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.topBar_count {
+  margin: 0 10px 0 10px;
+}
