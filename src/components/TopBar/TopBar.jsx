@@ -1,14 +1,18 @@
 import React from 'react';
 import './TopBar.css';
 import { ShoppingBasket ,Search } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 function TopBar() {
   return (
     <div className='topBar'>
-      <img 
-        className='topBar_logo'
-        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-      />
+      <Link to="/">
+        <img 
+          className='topBar_logo'
+          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          alt=""
+        />
+      </Link>
 
       <div className='topBar_search'>
         <input className='topBar_input' type='text'/>
@@ -31,10 +35,13 @@ function TopBar() {
           <span className='topBar_optionTwo'>Prime</span>
         </div>
 
-        <div className="topBar_optionBasket">
-          <ShoppingBasket />
-          <span className='topBar_optionTwo topBar_count'>0</span>
-        </div>
+        <Link to="/checkout">
+          <div className="topBar_optionBasket">
+            <ShoppingBasket />
+            <span className='topBar_optionTwo topBar_count'>0</span>
+          </div>
+        </Link>
+        
       </div>
     </div>
   )
