@@ -2,8 +2,12 @@ import React from 'react';
 import './TopBar.css';
 import { ShoppingBasket ,Search } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
+import { useStateValue } from '../../StateProvider';
 
 function TopBar() {
+
+  const [{basket}, dispatch] = useStateValue();
+
   return (
     <div className='topBar'>
       <Link to="/">
@@ -38,7 +42,9 @@ function TopBar() {
         <Link to="/checkout">
           <div className="topBar_optionBasket">
             <ShoppingBasket />
-            <span className='topBar_optionTwo topBar_count'>0</span>
+            <span className='topBar_optionTwo topBar_count'>
+              {basket?.length}
+            </span>
           </div>
         </Link>
         
