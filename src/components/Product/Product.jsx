@@ -9,7 +9,7 @@ function Product({id, title, price, image, rating}) {
   console.log("In basket: ", basket);
 
   const addToBasket = () => {
-    dispatch({
+    dispatch({ //inside{} = action
       type: 'ADD_TO_BASKET',
       item: {
         id: id,
@@ -33,7 +33,7 @@ function Product({id, title, price, image, rating}) {
         </p>
 
         <div className="product_rating">
-          {Array(rating).fill().map((_, i) => <p>⭐</p>)}
+          {Array(rating).fill().map((_, i) => <p>⭐</p>)} {/* print stars (rating times) */}
         </div>
 
       </div>
