@@ -5,7 +5,12 @@
   height: max-content;
 }
 
+.checkout_basket {
+  width: 100%;
+}
+
 .checkout_title {
+  max-width: 100%;
   margin: 0 10px 0 0;
   padding: 10px;
   border-bottom: 1px solid lightgray;
