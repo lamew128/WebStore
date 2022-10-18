@@ -24,10 +24,13 @@ function TopBar() {
       </div>
 
       <div className='topBar_nav'>
-        <div className='topBar_option'>
-          <span className='topBar_optionOne'>Hello Guest</span>
-          <span className='topBar_optionTwo'>Sign In</span>
-        </div>
+
+        <Link to="/login">
+          <div className='topBar_option'>
+            <span className='topBar_optionOne'>Hello Guest</span>
+            <span className='topBar_optionTwo'>Sign In</span>
+          </div>
+        </Link>
 
         <div className='topBar_option'>
           <span className='topBar_optionOne'>Returns</span>
