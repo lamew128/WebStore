@@ -48,6 +48,11 @@ function App() {
             <Checkout />
           </Route>
 
+          <Route path="/payment">
+            <TopBar />
+            
+          </Route>
+
           <Route path="/">
             <TopBar />
             <Home />
