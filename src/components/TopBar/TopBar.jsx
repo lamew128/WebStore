@@ -3,10 +3,17 @@ import './TopBar.css';
 import { ShoppingBasket ,Search } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../../StateProvider';
+import { auth } from '../../firebase';
 
 function TopBar() {
 
-  const [{basket}, dispatch] = useStateValue();
+  const [{basket, user}, dispatch] = useStateValue();
+
+  const signOut = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
 
   return (
     <div className='topBar'>
@@ -25,12 +32,19 @@ function TopBar() {
 
       <div className='topBar_nav'>
 
-        <Link to="/login">
-          <div className='topBar_option'>
-            <span className='topBar_optionOne'>Hello Guest</span>
-            <span className='topBar_optionTwo'>Sign In</span>
+        {user ? 
+          <div className='topBar_option' onClick={signOut}>
+            <span className='topBar_optionOne'>Hello user</span>
+            <span className='topBar_optionTwo'>Sign Out</span>
           </div>
-        </Link>
+        :
+          <Link to='/login'>
+            <div className='topBar_option'>
+              <span className='topBar_optionOne'>Hello Guest</span>
+              <span className='topBar_optionTwo'>Sign In</span>
+            </div>
+          </Link>
+        }
 
         <div className='topBar_option'>
           <span className='topBar_optionOne'>Returns</span>
