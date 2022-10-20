@@ -1,9 +1,10 @@
 import './App.css';
 import TopBar from './components/TopBar/TopBar';
 import Home from './components/Home/Home';
-import Checkout from './components/Checkout/Checkout';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
+import Checkout from './components/Checkout/Checkout';
+import Payment from './components/Payment/Payment';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
@@ -50,7 +51,7 @@ function App() {
 
           <Route path="/payment">
             <TopBar />
-            
+            <Payment />
           </Route>
 
           <Route path="/">
