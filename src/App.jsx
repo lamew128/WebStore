@@ -12,7 +12,8 @@ import { useStateValue } from './StateProvider';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-const promise = loadStripe(process.env.PK);
+const PK = process.env.REACT_APP_PK;
+const promise = loadStripe(PK);
 
 function App() {
 
