@@ -46,10 +46,12 @@ function TopBar() {
           </Link>
         }
 
-        <div className='topBar_option'>
-          <span className='topBar_optionOne'>Returns</span>
-          <span className='topBar_optionTwo'>& Orders</span>
-        </div>
+        <Link to='/orders'>
+          <div className='topBar_option'>
+            <span className='topBar_optionOne'>Returns</span>
+            <span className='topBar_optionTwo'>& Orders</span>
+          </div>
+        </Link>
 
         <div className='topBar_option'>
           <span className='topBar_optionOne'>Your</span>

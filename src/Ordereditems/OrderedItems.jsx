@@ -2,7 +2,6 @@ import moment from 'moment/moment';
 import React from 'react';
 import CurrencyFormat from 'react-currency-format';
 import CheckoutProduct from '../components/CheckoutProduct/CheckoutProduct';
-import { totalPrice } from '../reducer';
 import { useStateValue } from '../StateProvider';
 import './OrderedItems.css';
 
@@ -24,6 +23,7 @@ function OrderedItem({ order }) {
           image={item.image}
           price={item.price}
           rating={item.rating}
+          hideButton
         />
       ))}
 
@@ -34,7 +34,7 @@ function OrderedItem({ order }) {
           </>
         )}
         decimalScale={2}
-        value={totalPrice(basket)}
+        value={order.data.amount / 100}
         displayType={"text"}
         thousandSeparator={true}
         prefix={"$"}
