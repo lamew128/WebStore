@@ -21,6 +21,31 @@
   border-bottom: 1px solid lightgray;
 }
 
+.payment_details {
+  border: 1px solid black;
+  max-width: 500px;
+}
+
+.payment_details form {
+  padding: 20px;
+}
+
+.payment_details h3 {
+  padding: 0 0 20px 0;
+}
+
+.payment_details form div button {
+  background: #F0C14B;
+  border-radius: 2px;
+  border: 1px solid;
+  border-color: #A88734 #9C7E31 #846A29;
+  width: 100px;
+  height: 30%;
+  font-weight: bolder;
+  margin: 10px 0 0 0;
+  color: #111;
+}
+
 .payment_title {
   flex: 0.2;
 }
