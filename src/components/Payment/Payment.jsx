@@ -7,6 +7,8 @@ import { totalPrice } from '../../reducer';
 import { useStateValue } from '../../StateProvider';
 import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
 import './Payment.css';
+import { db } from '../../firebase';
+import { doc, setDoc } from 'firebase/firestore';
 
 function Payment() {
 
@@ -49,6 +51,15 @@ function Payment() {
       }
     })
     .then(({ paymentIntent }) => {
+
+      const orderRef = doc(db, "user", user?.uid, "orders", paymentIntent.id);
+
+      setDoc(orderRef, {
+        basket: basket,
+        amount: paymentIntent.amount,
+        created: paymentIntent.created
+      });
+
       setSucceeded(true);
       setError(null);
       setProcessing(false);
