@@ -25,38 +25,35 @@ function TopBar() {
         />
       </Link>
 
-      <div className='topBar_search'>
-        <input className='topBar_input' type='text'/>
-        <Search className='topBar_searchIcon' />
-      </div>
-
       <div className='topBar_nav'>
 
         {user ? 
-          <div className='topBar_option' onClick={signOut}>
-            <span className='topBar_optionOne'>Hello user</span>
-            <span className='topBar_optionTwo'>Sign Out</span>
-          </div>
+          <>
+            <div className='topBar_option'>
+              <span className='topBar_optionOne'>Signed In as</span>
+              <span className='topBar_optionTwo'>{user.email}</span>
+            </div>
+            <div className='topBar_option' onClick={signOut}>
+              <span className='topBar_optionOne'>Sign</span>
+              <span className='topBar_optionTwo'>Out</span>
+            </div>
+          </>
+          
         :
           <Link to='/login'>
             <div className='topBar_option'>
-              <span className='topBar_optionOne'>Hello Guest</span>
-              <span className='topBar_optionTwo'>Sign In</span>
+              <span className='topBar_optionOne'>Sign</span>
+              <span className='topBar_optionTwo'>In</span>
             </div>
           </Link>
         }
 
         <Link to='/orders'>
           <div className='topBar_option'>
-            <span className='topBar_optionOne'>Returns</span>
-            <span className='topBar_optionTwo'>& Orders</span>
+            <span className='topBar_optionOne'>Order</span>
+            <span className='topBar_optionTwo'>History</span>
           </div>
         </Link>
-
-        <div className='topBar_option'>
-          <span className='topBar_optionOne'>Your</span>
-          <span className='topBar_optionTwo'>Prime</span>
-        </div>
 
         <Link to="/checkout">
           <div className="topBar_optionBasket">

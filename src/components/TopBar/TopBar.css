@@ -1,6 +1,7 @@
 .topBar {
   height: 60px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: black;
   position: sticky;
@@ -43,6 +44,7 @@
 .topBar_option {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   margin: 0 10px 0 10px;
   color: white;
   cursor: pointer;
