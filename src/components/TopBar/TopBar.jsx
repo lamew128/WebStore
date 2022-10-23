@@ -4,6 +4,7 @@ import { ShoppingBasket ,Search } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../../StateProvider';
 import { auth } from '../../firebase';
+import logo from '../../logo.PNG';
 
 function TopBar() {
 
@@ -20,8 +21,8 @@ function TopBar() {
       <Link to="/">
         <img 
           className='topBar_logo'
-          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-          alt=""
+          src={logo}
+          alt="logo"
         />
       </Link>
 

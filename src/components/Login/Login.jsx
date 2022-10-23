@@ -3,6 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { auth } from '../../firebase';
 import './Login.css';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import logo from '../../logo.PNG';
+
 function Login() {
 
   const history = useHistory();
@@ -45,8 +47,8 @@ function Login() {
       <Link to="/">
         <img 
           className='login_logo'
-          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-          alt=""
+          src={logo}
+          alt="logo"
         />
       </Link>
 
