@@ -21,7 +21,24 @@ App deployed: https://webstore-c908a.web.app/
 2. Install dependencies using the `npm install` command in both / and /functions folder.
 3. Create a firebase project.
 4. Create a file called firebase.js in the src folder with the following code.
+```
+//import firebase from "firebase";
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  //firebase config from the firebase project goes here
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+
+const db = getFirestore(firebaseApp);
+const auth = getAuth(firebaseApp);
+
+export { db, auth };
+```
 
 ## Tech Stack
 
