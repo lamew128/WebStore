@@ -39,6 +39,17 @@ const auth = getAuth(firebaseApp);
 
 export { db, auth };
 ```
+5. Create a stripe account.
+6. Create a file called .env in / with the following code.
+```
+REACT_APP_PK=//stripe publishable key goes here
+```
+7. Create a file called .env in /functions with the following code.
+```
+SK=//stripe secret key goes here
+```
+8. Use ```npm run build```in /functions to setup the backend.
+9. Use npm start in / to run the app. default url: http://localhost:3000/
 
 ## Tech Stack
 
