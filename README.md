@@ -53,6 +53,43 @@ SK=//stripe secret key goes here
 
 ## Tech Stack
 
+- Front-end
+  - React
+  - React Router
+  - Axios
+- Styling
+  - CSS3
+- Back-end
+  - Express 
+  - Firebase
+- API
+  - Stripe
+
 ## dependencies
+
+### front-end
+- @material-ui/core
+- @material-ui/icons
+- @stripe/react-stripe-js
+- @stripe/stripe-js
+- @testing-library/jest-dom
+- @testing-library/react
+- @testing-library/user-event
+- axios
+- firebase
+- moment
+- react
+- react-currency-format
+- react-dom
+- react-router-dom
+- react-scripts
+- web-vitals
+
+### back-end
+- cors
+- express
+- firebase-admin
+- firebase-functions
+- stripe
 
 *Last updated Octeber 26, 2022*
