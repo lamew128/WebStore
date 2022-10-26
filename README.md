@@ -17,6 +17,12 @@ App deployed: https://webstore-c908a.web.app/
 
 ## Getting Started
 
+1. Fork this repository, then clone your fork of this repository.
+2. Install dependencies using the `npm install` command in both / and /functions folder.
+3. Create a firebase project.
+4. Create a file called firebase.js in the src folder with the following code.
+
+
 ## Tech Stack
 
 ## dependencies
