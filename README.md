@@ -50,7 +50,7 @@ SK=//stripe secret key goes here
 ```
 8. Use ```firebase emulators:start```in /functions to setup the backend and replace the baseUrl in /src/axios.js with url obtained from ```firebase emulators:start``` .
 9. Use ```npm start``` in / to run the app. default url: http://localhost:3000/
-10. ```use 4242 4242 4242 4242 04/24 242 42424``` for the credit card infomation.
+10. Use ```4242 4242 4242 4242 04/24 242 42424``` for the credit card infomation.
 
 ## Tech Stack
 
