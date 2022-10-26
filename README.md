@@ -19,7 +19,7 @@ App deployed: https://webstore-c908a.web.app/
 
 1. Fork this repository, then clone your fork of this repository.
 2. Install dependencies using the `npm install` command in both / and /functions folder.
-3. Create a firebase project.
+3. Create a firebase project and enable the Email/Password Sign-in method.
 4. Create a file called firebase.js in the src folder with the following code.
 ```
 //import firebase from "firebase";
@@ -48,8 +48,8 @@ REACT_APP_PK=//stripe publishable key goes here
 ```
 SK=//stripe secret key goes here
 ```
-8. Use ```npm run build```in /functions to setup the backend.
-9. Use npm start in / to run the app. default url: http://localhost:3000/
+8. Use ```firebase emulators:start```in /functions to setup the backend and replace the baseUrl in /src/axios.js with url obtained from ```firebase emulators:start``` .
+9. Use ```npm start``` in / to run the app. default url: http://localhost:3000/
 
 ## Tech Stack
 
