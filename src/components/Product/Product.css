@@ -12,6 +12,10 @@
   z-index: 1;
 }
 
+.product:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 .product img {
   max-height: 200px;
   width: 100%;
@@ -22,9 +26,15 @@
 .product button {
   background: #F0C14B;
   border: 1px solid;
+  border-radius: 2px;
   margin: 10px 0 0 0;
   border-color: #A88734 #9C7E31 #846A29;
   color: #111;
+}
+
+.product button:hover {
+  background: #f8d273;
+  cursor: pointer;
 }
 
 .product_info {

@@ -5,7 +5,7 @@ import Login from './components/Login/Login';
 import Checkout from './components/Checkout/Checkout';
 import Payment from './components/Payment/Payment';
 import Orders from './components/Orders/Orders';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { useEffect } from 'react';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
@@ -17,7 +17,7 @@ const promise = loadStripe(PK);
 
 function App() {
 
-  const [{}, dispatch] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -56,10 +56,18 @@ function App() {
           </Route>
 
           <Route path="/payment">
-            <TopBar />
-            <Elements stripe={promise}>
-              <Payment />
-            </Elements>
+            {basket?.length > 0 ? 
+              (
+                <>
+                  <TopBar />
+                  <Elements stripe={promise}>
+                    <Payment />
+                  </Elements>
+                </>
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           </Route>
 
           <Route path="/orders">

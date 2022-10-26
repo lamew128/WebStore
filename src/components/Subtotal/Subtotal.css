@@ -29,3 +29,13 @@
   border-color: #A88734 #9C7E31 #846A29;
   color: #111;
 }
+
+.subtotal button:hover {
+  background: #f8d273;
+  cursor: pointer;
+}
+
+.subtotal button:disabled{
+  background: lightgray;
+  cursor: default;
+}
