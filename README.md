@@ -1,6 +1,10 @@
 # "Web Store"
 
+App deployed: https://webstore-c908a.web.app/
+
 ## Overview
+
+"Web Store" is clone of amazon(online store) which allow users to do online shopping simulation. Functions included register/login, adding items to basket, removing items from basket, viewing the basket and subtotal, payment process and viewing the order histories.
 
 ## Final Product
 
