@@ -46,6 +46,20 @@
   color: #111;
 }
 
+.payment_details form div button:hover {
+  background: #f8d273;
+  cursor: pointer;
+}
+
+.payment_details form div button:active {
+  border-color: black;
+}
+
+.payment_details form div button:disabled{
+  background: lightgray;
+  cursor: default;
+}
+
 .payment_title {
   flex: 0.2;
 }

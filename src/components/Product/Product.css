@@ -37,6 +37,10 @@
   cursor: pointer;
 }
 
+.product button:active {
+  border-color: black;
+}
+
 .product_info {
   
   height: 100px;

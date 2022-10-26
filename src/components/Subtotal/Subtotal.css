@@ -10,11 +10,6 @@
   border-radius: 3px;
 }
 
-.subtotal_gift {
-  display: flex;
-  align-items: center;
-}
-
 .subtotal_gift input{
   margin: 0 5px 0 0;
 }
@@ -33,6 +28,10 @@
 .subtotal button:hover {
   background: #f8d273;
   cursor: pointer;
+}
+
+.subtotal button:active {
+  border-color: black;
 }
 
 .subtotal button:disabled{

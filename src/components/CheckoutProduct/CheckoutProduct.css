@@ -10,9 +10,19 @@
 .checkoutProduct_info button {
   background: #F0C14B;
   border: 1px solid;
+  border-radius: 2px;
   margin: 10px 0 0 0;
   border-color: #A88734 #9C7E31 #846A29;
   color: #111;
+}
+
+.checkoutProduct_info button:hover {
+  background: #f8d273;
+  cursor: pointer;
+}
+
+.checkoutProduct_info button:active {
+  border-color: black;
 }
 
 .checkoutProduct_image {
