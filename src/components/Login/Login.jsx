@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { auth } from '../../firebase';
 import './Login.css';
@@ -8,17 +8,15 @@ import logo from '../../logo.PNG';
 function Login() {
 
   const history = useHistory();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const signIn = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
     .then((userCredential) => {
       // Signed in 
-      //const user = userCredential.user;
       history.push('/');
-      // ...
     })
     .catch((error) => {
       alert(error.message);
@@ -29,9 +27,9 @@ function Login() {
 
   const register = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
     .then((userCredential) => {
-      console.log(userCredential);
+      //console.log(userCredential);
       if (userCredential) {
         history.push('/');
       }
@@ -57,10 +55,10 @@ function Login() {
 
         <form>
           <h5>Email</h5>
-          <input type='text' value={email} onChange={e => setEmail(e.target.value)}/>
+          <input type='email' ref={emailRef}/>
 
           <h5>Password</h5>
-          <input type='password' value={password} onChange={e => setPassword(e.target.value)}/>
+          <input type='password' ref={passwordRef}/>
 
           <button className='login_signInButton' type='submit' onClick={signIn}>Sign In</button>
 
