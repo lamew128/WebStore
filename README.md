@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# "Web Store"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App deployed: https://webstore-c908a.web.app/
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+"Web Store" is clone of amazon(online store) which allow users to do online shopping simulation. Functions included register/login, adding items to basket, removing items from basket, viewing the basket and subtotal, payment process and viewing the order histories.
 
-### `npm start`
+## Final Product
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+!["Screenshot of Home Page"](https://github.com/lamew128/WebStore/blob/main/screenshots/1.PNG)
+!["Screenshot of Login Page"](https://github.com/lamew128/WebStore/blob/main/screenshots/2.PNG)
+!["Screenshot of adding an item to the basket"](https://github.com/lamew128/WebStore/blob/main/screenshots/3.PNG)
+!["Screenshot of Basket Page"](https://github.com/lamew128/WebStore/blob/main/screenshots/4.PNG)
+!["Screenshot of Checkout Page"](https://github.com/lamew128/WebStore/blob/main/screenshots/5.PNG)
+!["Screenshot of Order history Page"](https://github.com/lamew128/WebStore/blob/main/screenshots/6.PNG)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+1. Fork this repository, then clone your fork of this repository.
+2. Install dependencies using the `npm install` command in both / and /functions folder.
+3. Create a firebase project and enable the Email/Password Sign-in method.
+4. Create a file called firebase.js in the src folder with the following code.
+```
+//import firebase from "firebase";
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  //firebase config from the firebase project goes here
+};
 
-### `npm run build`
+const firebaseApp = initializeApp(firebaseConfig);
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+const db = getFirestore(firebaseApp);
+const auth = getAuth(firebaseApp);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export { db, auth };
+```
+5. Create a stripe account.
+6. Create a file called .env in / with the following code.
+```
+REACT_APP_PK=//stripe publishable key goes here
+```
+7. Create a file called .env in /functions with the following code.
+```
+SK=//stripe secret key goes here
+```
+8. Use ```firebase emulators:start```in /functions to setup the backend and replace the baseUrl in /src/axios.js with url obtained from ```firebase emulators:start``` .
+9. Use ```npm start``` in / to run the app. default url: http://localhost:3000/
+10. Use ```4242 4242 4242 4242 04/24 242 42424``` for the credit card infomation.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech Stack
 
-### `npm run eject`
+- Front-end
+  - React
+  - React Router
+  - Axios
+- Styling
+  - CSS3
+- Back-end
+  - Express 
+  - Firebase
+- API
+  - Stripe
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### front-end
+- @material-ui/core
+- @material-ui/icons
+- @stripe/react-stripe-js
+- @stripe/stripe-js
+- @testing-library/jest-dom
+- @testing-library/react
+- @testing-library/user-event
+- axios
+- firebase
+- moment
+- react
+- react-currency-format
+- react-dom
+- react-router-dom
+- react-scripts
+- web-vitals
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### back-end
+- cors
+- express
+- firebase-admin
+- firebase-functions
+- stripe
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Last updated Octeber 26, 2022*
